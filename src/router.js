@@ -8,6 +8,7 @@ const Router = ()=> {
             <Switch>
                 <Route path='/login' component={Pages.Login}/>
                 <Route path='/signup' component={Pages.SignUp} />
+                <Route path='/post' component={Pages.Post} />
                 <Redirect from='*' to='page-not-found'/>
             </Switch>
         </React.Suspense>

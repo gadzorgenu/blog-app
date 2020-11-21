@@ -1,10 +1,11 @@
 import React from 'react'
-import SignForm from '../components/SignUpForm'
+import SignUpForm from '../components/Form/SignUpForm'
 
 function Login(){ 
 
   return(
-    <SignForm/>
+    <SignUpForm/>
+  
   )
   
 }
