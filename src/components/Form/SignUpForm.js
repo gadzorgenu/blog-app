@@ -1,7 +1,7 @@
 
 import React, {useState} from 'react'
 import {Formik,Form} from 'formik'
-  import { Box, Heading,Input,InputGroup, Grid,InputRightElement,Button} from '@chakra-ui/react'
+  import { Box, Heading,Input,InputGroup, Grid,InputRightElement,Link, Button} from '@chakra-ui/react'
   import {SignUpSchema} from '../../validation'
 
   const  SignUpForm = ()=> {
@@ -129,7 +129,10 @@ import {Formik,Form} from 'formik'
                                 </InputRightElement>
                             </InputGroup>
                             </Grid>
-                            <Button type='submit' colorScheme='pink' size='md' w='100%' > Login</Button>
+                            
+                                <Button type='submit' colorScheme='pink' size='md' w='100%' > <Link to='/post'>Sign up </Link>
+                                </Button>
+                            
                         </Box>
                     </Form>
                 )}
