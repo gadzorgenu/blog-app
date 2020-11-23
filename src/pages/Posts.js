@@ -1,6 +1,7 @@
 import React, {useEffect, useState} from 'react'
 import axios from 'axios'
 import {Box, Heading, Button,Image} from '@chakra-ui/react'
+import { VscEdit } from 'react-icons/vsc'
 
 const Posts = () => {
     const [posts, setPosts] = useState([])
@@ -19,7 +20,10 @@ const Posts = () => {
     //     <Box>
     //     {
     //         posts.map((post) => (
-    //         <h6 key={post.id}>{post.title}</h6>
+    //         <h5 key={post.id}>
+    //           <h6 >{post.title}</h6>
+    //           <h6 >{post.body}</h6>
+    //        </h5>
     //         ))
     //     }
     // </Box>
@@ -29,7 +33,7 @@ const Posts = () => {
         <Box bg='red.300' h='300px' pt={10} textAlign='center'>
             <Heading as='h5'>Welcome to your blog app</Heading>
         </Box>
-        <Button ml={5} mt={4}colorScheme='blue'>Add a post</Button>
+        <Button leftIcon={<VscEdit />} ml={5} mt={4}colorScheme='blue'>Add a post</Button>
     </Box>
     )
 }
