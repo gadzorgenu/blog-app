@@ -27,3 +27,4 @@ app.get('/', (req,res) => {
     res.status(200).send('<h1>hello</h1>')
 })
 
+app.use('',express.static(''))
