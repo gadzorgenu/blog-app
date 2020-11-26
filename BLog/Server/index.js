@@ -1,9 +1,29 @@
+// const express = require('express')
+
+// const server = express()
+
+// server.get('/', (req, res)=>{
+//     res.status(200).send('Georgina')
+// })
+
+// server.listen(8000,()=> {console.log('server started')})
+
+require ('dotenv').config()
 const express = require('express')
+const mongoose = require('mongoose')
 
-const server = express()
+const app = express()
+const db = process.env.dbLink
 
-server.get('/', (req, res)=>{
-    res.status(200).send('Georgina')
+const port = process.env.PORT
+mongoose.connect(db, {useNewUrlParser: true, useUnifiedTopology:true, useCreateIndex: true},()=>{
+    app.listen(port, () => {
+        //also trying to log info
+        console.info('Application started');
+    })
 })
 
-server.listen(8000,()=> {console.log('server started')})
+app.get('/', (req,res) => {
+    res.status(200).send('<h1>hello</h1>')
+})
+
