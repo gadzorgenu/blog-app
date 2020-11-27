@@ -7,7 +7,7 @@ const Weather =() =>{
 
     const foreCast = (e) => {
         e.preventDefault()
-        fetch(`api.openweathermap.org/data/2.5/weather?q=Accra&appid=9e06babad1f7b63ff83be83db6e8eb67`)
+        fetch(``)
         .then((result) => {
             setInput('')
             setSearch(result)
