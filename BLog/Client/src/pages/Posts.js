@@ -1,7 +1,7 @@
 import React, {useEffect, useState} from 'react'
 import axios from 'axios'
-import {Box, Heading, Button,Image} from '@chakra-ui/react'
-
+import {Box, Heading} from '@chakra-ui/react'
+import Weather from '../components/Weather'
 import AddPost from '../components/Modals/AddPostModal'
 
 
@@ -38,6 +38,7 @@ const Posts = () => {
             <Heading as='h5'>Welcome to your blog app</Heading>
         </Box>
        <AddPost/>
+       <Weather/>
     </Box>
     )
 }

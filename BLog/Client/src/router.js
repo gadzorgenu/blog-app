@@ -9,7 +9,7 @@ const Router = ()=> {
                 <Route path='/login' component={Pages.Login}/>
                 <Route path='/signup' component={Pages.SignUp} />
                 <Route path='/post' component={Pages.Post} />
-                <Redirect from='*' to='page-not-found'/>
+                <Redirect from='*' to='login'/>
             </Switch>
         </React.Suspense>
     )
