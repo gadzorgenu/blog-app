@@ -5,8 +5,8 @@ const UserController = {}
 //creating a user 
 UserController.createUser = async (req, res)=> {
     try{
-        let user = new User(req.body)
-        let result = await user.save()
+        let newUser = new User(req.body)
+        let result = await newUser.save()
         res.status(200).send({message: 'Account created', result})
     }catch(error){
         console.log(error)
@@ -16,7 +16,7 @@ UserController.createUser = async (req, res)=> {
 //retrieving users info
 UserController.getUsers = async (req,res) => {
     try {
-        let user = await User.find({firstname: req.body.firstname})
+        let user = await User.find({})
         if(!user){
             res.status(400).send({message: 'User not found'})
         }else{
@@ -45,7 +45,7 @@ UserController.updateUser = async (req,res) => {
     const {firstname, lastname,email, phone,password } = req.body
     
     try {
-    let user=   await User.findOneAndUpdate(
+         let user=  await User.findOneAndUpdate(
             {_id: req.params.id},
             // {$set: req.body }
             {firstname, lastname, email, phone, password }
