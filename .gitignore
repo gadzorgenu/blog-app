@@ -4,7 +4,7 @@
 # dependencies
 /node_modules
 /Client/node_modules
-/Server/node_modules
+/Server/.gitignore
 /.pnp
 .pnp.js
 
