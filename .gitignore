@@ -2,9 +2,9 @@
 
 .env
 # dependencies
-/node_modules
+
 /Client/node_modules
-/Server/.gitignore
+/Server/node_modules
 /.pnp
 .pnp.js
 
