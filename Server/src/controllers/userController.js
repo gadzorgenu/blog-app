@@ -1,5 +1,29 @@
 const User = require('../models/user')
 
+const handleError = () => {
+    let err = { firstname: '', lastname:'', email:'', password:'', phone:'', comparePassword:''}
+    switch (error.message) {
+        case 'incorrect firstname':
+            err.firstname = 'firstname does not exist'
+        case 'incorrect lastname':
+            err.lastname= 'lastname does not exist'
+        case 'incorrect email':
+            err.email='invalid email'
+        case 11000: 
+            err.email='email already exist'
+            break;
+    
+        default:
+            return ''
+    }
+
+    if(error.message.includes('user validation failed')){
+        Object.values(error.errors).forEach(({properties}) => {
+            err[properties.path] = properties.message
+        })
+    }
+    return err
+}
 const UserController = {}
 
 //creating a user 
@@ -10,6 +34,8 @@ UserController.createUser = async (req, res)=> {
         res.status(200).send({message: 'Account created', result})
     }catch(error){
         console.log(error)
+        const warning = handleError(error)
+        res.status(400).json({warning})
     }
 }
 
@@ -24,6 +50,8 @@ UserController.getUsers = async (req,res) => {
         }
     } catch (error) {
         console.log(error)
+        const warning = handleError(error)
+        res.status(400).json({warning})
     }
 }
 
@@ -42,13 +70,12 @@ UserController.getUsers = async (req,res) => {
 UserController.updateUser = async (req,res) => {
 
     //destructuring user detail
-    const {firstname, lastname,email, phone,password } = req.body
+    const {firstname, lastname,email, phone,password, comparePassword } = req.body
     
     try {
          let user=  await User.findOneAndUpdate(
             {_id: req.params.id},
-            // {$set: req.body }
-            {firstname, lastname, email, phone, password }
+            {firstname, lastname, email, phone, password,comparePassword }
         )
         if(user){
             res.status(200).send({message:'User updated successfully', user})
@@ -57,6 +84,8 @@ UserController.updateUser = async (req,res) => {
         }
     } catch (error) {
         console.log(error)
+        const warning = handleError(error)
+        res.status(400).json({warning})
     }
 }
 
