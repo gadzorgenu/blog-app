@@ -8,7 +8,7 @@ const { createUser, getUsers, updateUser, deleteUser } = require('../controllers
 router.post('/api/newUser', createUser)
 
 //getting a user
-router.get('/api/user/firstname', getUsers)
+router.get('/api/users', getUsers)
 
 //updating user
 router.put('api/userUpdate', updateUser)

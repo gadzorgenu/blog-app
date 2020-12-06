@@ -2,7 +2,10 @@
 require ('dotenv').config()
 const express = require('express')
 const mongoose = require('mongoose')
+const path = require('path')
+
 const userRoute = require('./src/routes/User')
+const blogRoute = require('./src/routes/blog')
 
 const app = express()
 
@@ -25,7 +28,12 @@ app.use(express.json())
 
 //routes
 app.use(userRoute)
+app.use(blogRoute)
+
+app.use(express.static(path.join(__dirname,'build')))
 
 app.get('/', (req,res) => {
-    res.status(200).send('hello')
+    res.sendFile(path.join(__dirname, 'build', 'index.html'))
 })
+
+app

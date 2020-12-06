@@ -1,7 +1,6 @@
 import React, {useEffect, useState} from 'react'
 import axios from 'axios'
-import {Box, Heading} from '@chakra-ui/react'
-import Weather from '../components/Weather'
+import {Box, Button, Heading, Flex, Input} from '@chakra-ui/react'
 import AddPost from '../components/Modals/AddPostModal'
 
 
@@ -18,27 +17,16 @@ const Posts = () => {
     //     .catch((error) => {
     //         console.log(error)
     //     })
-    })
+    },[])
+
     return(
 
-    //     <Box>
-    //     {
-    //         posts.map((post) => (
-    //         <h5 key={post.id}>
-    //           <h6 >{post.title}</h6>
-    //           <h6 >{post.body}</h6>
-    //        </h5>
-    //         ))
-    //     }
-    // </Box>
-
     <Box>
-        {/* <Image src='../../assets/bg.jpg' alt='banner'/> */}
-        {/* <Box bg='red.300' h='300px' pt={10} textAlign='center'>
-            <Heading as='h5'>Welcome to your blog app</Heading>
-        </Box>
-       <AddPost/> */}
-       <Weather/>
+        <Flex m='auto' w={{md: '40%'}}>
+            <Input placeholder='Search blog post' rounded='30px'/>
+            <Button rounded='30px' bg='red.400'>Search</Button>
+        </Flex>
+       <AddPost/>
     </Box>
     )
 }

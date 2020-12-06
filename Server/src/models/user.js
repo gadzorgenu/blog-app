@@ -25,11 +25,14 @@ const userSchema = new mongoose.Schema({
         type: String,
         minlength: 8,
         required: [true, 'Password is required']
+    }
     },
-    comparePassword:{
-        type: String,
-        minlength: 8,
-        required: true
+    {
+        timestamps: true,
+        writeConcern: {
+          w: 'majority',
+          j: true,
+          wtimeout: 1000
     }
 })
 

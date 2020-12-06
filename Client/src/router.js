@@ -8,7 +8,7 @@ const Router = ()=> {
             <Switch>
                 <Route path='/login' component={Pages.Login}/>
                 <Route path='/signup' component={Pages.SignUp} />
-                <Route path='/weather' component={Pages.Post} />
+                <Route path='/post' component={Pages.Post} />
                 <Redirect from='*' to='login'/>
             </Switch>
         </React.Suspense>

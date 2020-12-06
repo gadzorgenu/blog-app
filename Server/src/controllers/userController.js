@@ -43,11 +43,7 @@ UserController.createUser = async (req, res)=> {
 UserController.getUsers = async (req,res) => {
     try {
         let user = await User.find({})
-        if(!user){
-            res.status(400).send({message: 'User not found'})
-        }else{
-            res.status(200).send({message: 'User found', user})
-        }
+        res.status(200).send({message: 'User found', user})
     } catch (error) {
         console.log(error)
         const warning = handleError(error)
@@ -70,12 +66,12 @@ UserController.getUsers = async (req,res) => {
 UserController.updateUser = async (req,res) => {
 
     //destructuring user detail
-    const {firstname, lastname,email, phone,password, comparePassword } = req.body
+    const {firstname, lastname,email, phone,password } = req.body
     
     try {
          let user=  await User.findOneAndUpdate(
             {_id: req.params.id},
-            {firstname, lastname, email, phone, password,comparePassword }
+            {firstname, lastname, email, phone, password }
         )
         if(user){
             res.status(200).send({message:'User updated successfully', user})
