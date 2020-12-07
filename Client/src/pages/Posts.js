@@ -1,23 +1,13 @@
-import React, {useEffect, useState} from 'react'
+import React, {useContext, useState} from 'react'
 import axios from 'axios'
 import {Box, Button, Heading, Flex, Input} from '@chakra-ui/react'
 import AddPost from '../components/Modals/AddPostModal'
-
+import {BlogContext} from '../context/blogContext'
 
 const Posts = () => {
     
     const [posts, setPosts] = useState([])
-
-    
-    useEffect(()=>{
-    //     axios.get('https://jsonplaceholder.typicode.com/posts')
-    //     .then((res) =>{
-    //         setPosts(res.data)
-    //     })
-    //     .catch((error) => {
-    //         console.log(error)
-    //     })
-    },[])
+    const {addBlog, getBlogs, blog} = useContext(BlogContext)
 
     return(
 
