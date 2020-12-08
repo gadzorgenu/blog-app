@@ -9,7 +9,10 @@ import {
   Box,
   Avatar,
   useDisclosure,
-  Link
+  Link,
+  ListItem,
+  List
+
 } from '@chakra-ui/react'
 const SideBar = () => {
     const {isOpen,onOpen, onClose } = useDisclosure()
@@ -24,9 +27,14 @@ const SideBar = () => {
             <DrawerCloseButton/>
             <DrawerContent>
                 <DrawerBody>
-                    <Box m='auto'>
-                    <Avatar size='lg' src='../assets/profile.jpeg' name='Georgina Adzorgenu' />
-                    </Box>
+                   
+                    <List my='20px' textAlign='center'>
+                        <ListItem my='20px'>Profile</ListItem>
+                        <ListItem my='20px'>My Accounts</ListItem>
+                        <ListItem my='20px'>Help</ListItem>
+                        <ListItem my='20px'>Docs</ListItem>
+                        <ListItem my='20px'>FAQ</ListItem>
+                    </List>
                     <Link href='/login' ml={5} pt='50px'>Logout</Link>
                 </DrawerBody>
             </DrawerContent>
