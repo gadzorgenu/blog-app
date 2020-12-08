@@ -2,7 +2,7 @@
 import React, {useState} from 'react'
 import {Formik,Form} from 'formik'
   import { Box, Heading,Input,InputGroup,Text, Grid,InputRightElement,Link, Button} from '@chakra-ui/react'
-  import {SignUpSchema} from '../../validation'
+  import {SignUpSchema} from '../../helpers/validation'
 
   const  SignUpForm = ()=> {
 
