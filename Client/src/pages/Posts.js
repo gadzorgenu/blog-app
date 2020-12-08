@@ -4,7 +4,7 @@ import {Box, Button, Heading, Flex, Input} from '@chakra-ui/react'
 import AddPost from '../components/Modals/AddPostModal'
 import NavBar from '../components/NavBar'
 import {BlogContext} from '../context/blogContext'
-
+import Banner from '../assets/Banner.jpg'
 const Posts = () => {
     
     const [posts, setPosts] = useState([])
@@ -14,7 +14,7 @@ const Posts = () => {
 
     <Box>
         <NavBar/>
-        <Box mt='90px' mb='30px'>
+        <Box bg='blue.200' py='150px'>
         <Flex m='auto'  h={{md: '40%'}} w={{md:'50%'}}>
             <Input placeholder='Search blog post' rounded='30px'/>
             <Button rounded='30px' bg='red.300' ml={4}>Search</Button>
