@@ -6,8 +6,6 @@ import {
   DrawerContent,
   DrawerCloseButton,
   Button,
-  Box,
-  Avatar,
   useDisclosure,
   Link,
   ListItem,
