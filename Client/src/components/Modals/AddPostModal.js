@@ -11,7 +11,10 @@ import {
     FormControl,
     FormLabel,
     Input,
-    Textarea
+    Textarea,
+    Grid,
+    Box,
+    Heading
     
   } from "@chakra-ui/react"
 import { VscEdit } from 'react-icons/vsc'
@@ -26,19 +29,44 @@ const AddPost =()=> {
         <>
         <Button onClick={onOpen} leftIcon={<VscEdit />} ml={5} mt={4}colorScheme='blue'>Add a post</Button>
 
-        <Modal isOpen={isOpen} onClose={onClose}>
+        <Modal isOpen={isOpen} onClose={onClose} w={{md: '50%'}} >
           <ModalOverlay />
           <ModalContent>
             <ModalHeader>Add a post</ModalHeader>
             <ModalCloseButton />
             <ModalBody pb={6}>
+              <Grid templateColumns='repeat(2,1fr)' gap={6} my={3}>
                 <FormControl>
-                <FormLabel>Title</FormLabel>
-                <Input 
-                // ref={initialRef} 
-                placeholder="Title" />
-                </FormControl>
+                  <FormLabel>Title</FormLabel>
+                  <Input 
+                  // ref={initialRef} 
+                  placeholder="Title" />
+                  </FormControl>
 
+                  <FormControl>
+                  <FormLabel>Author</FormLabel>
+                  <Input 
+                  placeholder="Author" />
+                  </FormControl>
+              </Grid>
+              <Box>
+                <Heading fontSize='20px' my={2}>Social</Heading>
+                <Grid templateColumns='repeat(2,1fr)' gap={6}>
+                  <FormControl>
+                    <FormLabel>Github</FormLabel>
+                    <Input 
+                    // ref={initialRef} 
+                    placeholder="Github" />
+                    </FormControl>
+
+                    <FormControl>
+                    <FormLabel>LinkedIn</FormLabel>
+                    <Input 
+                    placeholder="LInkedIn" />
+                    </FormControl>
+                </Grid>
+              </Box>
+              
                 <FormControl mt={4}>
                 <FormLabel>Body</FormLabel>
                 <Textarea placeholder="Body" />

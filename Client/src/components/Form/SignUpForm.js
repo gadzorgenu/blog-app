@@ -26,7 +26,7 @@ import {Formik,Form} from 'formik'
     }
 
     return(
-        <Box pt={10}>
+        <Box pt={10} bg='white'>
             <Box textAlign='center' my={4}>
                 <Heading as='h5' fontSize={{ md: '3xl'}}> SIGN UP</Heading>
             </Box>

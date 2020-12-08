@@ -12,11 +12,15 @@ const Posts = () => {
     return(
 
     <Box>
-        <Flex m='auto' w={{md: '40%'}}>
+        <Box mt='90px' mb='30px'>
+        <Flex m='auto'  h={{md: '40%'}} w={{md:'50%'}}>
             <Input placeholder='Search blog post' rounded='30px'/>
-            <Button rounded='30px' bg='red.400'>Search</Button>
+            <Button rounded='30px' bg='red.400' ml={4}>Search</Button>
         </Flex>
-       <AddPost/>
+        </Box>
+        <Box pl='20px'>
+            <AddPost/>
+        </Box>
     </Box>
     )
 }

@@ -4,7 +4,7 @@ import {Box} from '@chakra-ui/react'
 
 function Login(){ 
   return(
-    <Box bg='green.400'>
+    <Box >
       <LoginForm/>
     </Box>
   )
