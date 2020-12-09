@@ -1,4 +1,4 @@
-import React,{createContext,useState} from 'react'
+import React,{createContext,useState, useEffect} from 'react'
 import axios from 'axios'
 import config from '../config'
 import PropTypes from 'prop-types'
@@ -8,6 +8,7 @@ export const BlogContext = createContext()
 
 
 const BlogContextProvider = ({children}) => {
+
     const [blog, setBlog] = useState([])
 
     const addBlog = async payload => {
@@ -22,7 +23,10 @@ const BlogContextProvider = ({children}) => {
         }
     }
     
+    
     const getBlogs = async () => {
+      
+
         try {
             await axios({
                 method: 'get',
