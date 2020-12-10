@@ -14,7 +14,7 @@ BlogController.addPost = async ( req, res) => {
 
 BlogController.getPosts = async (req, res) => {
     try {
-        let blog = await Blog.find({})
+        let blog = await Blog.find({title: req.params.title})
         blog ? res.status(200).send({message: 'Blog available', blog}) : res.status(400).send({message: 'Blog unavailable'})
     } catch (error) {
         console.log(error)
@@ -37,6 +37,20 @@ BlogController.updateBlog = async (req,res) => {
         }else{
             res.status(400).send({message:'Could not update blog'})
         }
+    } catch (error) {
+        console.log(error)
+    }
+}
+
+//deleting blog
+BlogController.deleteBlog = async ( req,res ) => {
+    try {
+      let blog=  await Blog.findOneAndDelete({_id: req.params.id})
+      if(blog){  
+      res.status(200).send({message: 'Blog deleted successfully'})
+      }else{
+          res.status(400).send({message: 'Could not delete blog'})
+      }
     } catch (error) {
         console.log(error)
     }

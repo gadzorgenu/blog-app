@@ -85,18 +85,6 @@ UserController.updateUser = async (req,res) => {
     }
 }
 
-//deleting user info
-UserController.deleteUser = async ( req,res ) => {
-    try {
-      let user=  await User.findOneAndDelete({_id: req.params.id})
-      if(user){  
-      res.status(200).send({message: 'User deleted successfully'})
-      }else{
-          res.status(400).send({message: 'Could not delete user'})
-      }
-    } catch (error) {
-        console.log(error)
-    }
-}
+
  
 module.exports = UserController
