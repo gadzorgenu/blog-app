@@ -12,15 +12,15 @@ const Posts = () => {
     const Blog_API = config.backend_API
     const {addBlog, getBlogs, blog} = useContext(BlogContext)
 
-    console.log(blog)
-    useEffect(() => {
-      const fetchData = async () => {
-          const result = await getBlogs()
-          console.log('hiiii')
-        console.log('result',result)
-      }
-      fetchData()
-    },[])
+    console.log('blog Data',blog)
+    // useEffect(() => {
+    //   const fetchData = async () => {
+    //       const result = await getBlogs()
+    //       console.log('hiiii')
+    //     console.log('result',result)
+    //   }
+    //   fetchData()
+    // },[])
     
     return(
 
