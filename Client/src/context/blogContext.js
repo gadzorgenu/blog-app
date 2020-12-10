@@ -1,4 +1,4 @@
-import React,{createContext,useState, useEffect} from 'react'
+import React,{createContext,useState} from 'react'
 import axios from 'axios'
 import config from '../config'
 import PropTypes from 'prop-types'
@@ -22,19 +22,16 @@ const BlogContextProvider = ({children}) => {
             return error
         }
     }
-    
-    
-    const getBlogs = async () => {
-      
 
+    const getBlogs = async () => {
         try {
             await axios({
                 method: 'get',
                 url: `${Blog_API}/api/blogs`
             })
-            .then( res =>{
-                setBlog(res.data)
-                console.log('result',res)
+            .then(res => {
+               setBlog(res) 
+               console.log('resu',res) 
             })
         } catch (error) {
             return error

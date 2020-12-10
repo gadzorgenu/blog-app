@@ -10,24 +10,17 @@ import config from '../config'
 const Posts = () => {
     
     const Blog_API = config.backend_API
-    const [posts, setPosts] = useState([])
-    // const {addBlog, getBlogs, blog} = useContext(BlogContext)
-    const [blog, setBlog] = useState([])
+    const {addBlog, getBlogs, blog} = useContext(BlogContext)
 
+    console.log(blog)
     useEffect(() => {
-        try {
-             axios({
-                method: 'get',
-                url: `${Blog_API}/api/blogs`
-            })
-            .then( res =>{
-                setBlog(res.data)
-                console.log('result',res)
-            })
-        } catch (error) {
-            return error
-        }
-    })
+      const fetchData = async () => {
+          const result = await getBlogs()
+          console.log('hiiii')
+        console.log('result',result)
+      }
+      fetchData()
+    },[])
     
     return(
 
