@@ -13,11 +13,13 @@ const db = process.env.db
 
 const port = process.env.port
 
-mongoose.connect(db, {
+mongoose.connect(db, 
+    {
     useNewUrlParser: true, 
     useUnifiedTopology:true, 
     useCreateIndex: true
-    },()=>{
+    },
+    ()=>{
     app.listen(port, () => {
         //also trying to log info
         console.info('Application started');
@@ -35,5 +37,3 @@ app.use(express.static(path.join(__dirname,'build')))
 app.get('/', (req,res) => {
     res.sendFile(path.join(__dirname, 'build', 'index.html'))
 })
-
-app
