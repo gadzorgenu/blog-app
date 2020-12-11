@@ -81,7 +81,6 @@ UserController.loginUser= async (req,res) =>{
 
     try{
         const body = req.body
-        console.log('body',body)
         const user = await User.findOne({ email: body.email }).exec()
 
         const passwordCheck = user === null
@@ -98,10 +97,8 @@ UserController.loginUser= async (req,res) =>{
             username: user.username,
             id: user._id
         }
-        console.log('userToken', userToken)
 
         const token =jwt.sign(userToken, process.env.SECRET)
-        console.log('token',token)
         res.status(200).send({token,email: user.email,username: user.username })
     }catch(error){
         res.status(500).send(error)
