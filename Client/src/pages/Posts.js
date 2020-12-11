@@ -10,17 +10,10 @@ import config from '../config'
 const Posts = () => {
     
     const Blog_API = config.backend_API
-    const {addBlog, getBlogs, blog} = useContext(BlogContext)
+    const {addBlog, blog} = useContext(BlogContext)
 
     console.log('blog Data',blog)
-    // useEffect(() => {
-    //   const fetchData = async () => {
-    //       const result = await getBlogs()
-    //       console.log('hiiii')
-    //     console.log('result',result)
-    //   }
-    //   fetchData()
-    // },[])
+   
     
     return(
 
@@ -42,6 +35,7 @@ const Posts = () => {
         </Box>
         <Grid templateColumns='repeat(4, 1fr)' gap={8}>
             {
+                blog && 
                 <BlogCard
 
                 />
