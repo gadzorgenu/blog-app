@@ -106,18 +106,7 @@ UserController.loginUser= async (req,res) =>{
     }catch(error){
         res.status(500).send(error)
     }
-    // try {
-    //     let user = await User.findOne({ email: req.body.email }).exec();
-    //     if(!user) {
-    //         return res.status(400).send({ message: "The email does not exist" });
-    //     }
-    //     if(!Bcrypt.compareSync(req.body.password, user.password)) {
-    //         return res.status(400).send({ message: "The password is invalid" });
-    //     }
-    //     res.send({ message: "The email and password combination is correct!" });
-    // } catch (error) {
-    //     res.status(500).send(error);
-    // }
+   
 }
 
  
