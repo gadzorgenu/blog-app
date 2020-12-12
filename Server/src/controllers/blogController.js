@@ -27,12 +27,12 @@ BlogController.getPosts = async (req, res) => {
 BlogController.updateBlog = async (req,res) => {
 
     //destructuring user detail
-    const {title, body, social,author,like,dislike} = req.body
+    const {title, body, social,author,like,dislike,image} = req.body
     
     try {
          let blog=  await Blog.findOneAndUpdate(
             {_id: req.params.id},
-            {title, body, social,author,like,dislike}
+            {title, body, social,author,like,dislike,image}
         )
         if(blog){
             res.status(200).send({message:'Blog updated successfully', blog})

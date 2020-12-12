@@ -29,13 +29,13 @@ const AddPost =()=> {
         <>
         <Button onClick={onOpen} leftIcon={<VscEdit />} ml={5} mt={4}colorScheme='blue'>Add a post</Button>
 
-        <Modal isOpen={isOpen} onClose={onClose} w={{md: '50%'}} >
+        <Modal isOpen={isOpen} onClose={onClose} size='xl' >
           <ModalOverlay />
           <ModalContent>
             <ModalHeader>Add a post</ModalHeader>
             <ModalCloseButton />
             <ModalBody pb={6}>
-              <Grid templateColumns='repeat(2,1fr)' gap={6} my={3}>
+              <Grid templateColumns='repeat(2,1fr)' gap={6} my={1}>
                 <FormControl>
                   <FormLabel>Title</FormLabel>
                   <Input 
@@ -49,7 +49,7 @@ const AddPost =()=> {
                   placeholder="Author" />
                   </FormControl>
               </Grid>
-              <Box>
+              <Box mt={4}>
                 <Heading fontSize='20px' my={2}>Social</Heading>
                 <Grid templateColumns='repeat(2,1fr)' gap={6}>
                   <FormControl>
@@ -57,13 +57,19 @@ const AddPost =()=> {
                     <Input 
                     // ref={initialRef} 
                     placeholder="Github" />
-                    </FormControl>
+                  </FormControl>
 
-                    <FormControl>
+                  <FormControl>
                     <FormLabel>LinkedIn</FormLabel>
                     <Input 
                     placeholder="LInkedIn" />
-                    </FormControl>
+                  </FormControl>
+                    
+                  <FormControl mt={0}>
+                    <FormLabel>Website</FormLabel>
+                    <Input 
+                    placeholder="Website" />
+                  </FormControl>
                 </Grid>
               </Box>
               
