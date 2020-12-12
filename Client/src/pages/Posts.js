@@ -1,24 +1,25 @@
 import React, {useContext,useEffect, useState} from 'react'
-import axios from 'axios'
 import {Box, Button, Heading,Text, Grid, Flex, Input} from '@chakra-ui/react'
 import AddPost from '../components/Modals/AddPostModal'
 import NavBar from '../components/NavBar'
 import {BlogContext} from '../context/blogContext'
 import BlogCard from '../components/Card/BLogCard'
 import config from '../config'
+import photograph from '../assets/photograph.jpg'
 
 const data =[
     {
         id:0,
         title:'The fun fact about photography',
-        description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent mi diam, porttitor sit amet ipsum vitae, posuere lobortis mauris. Nam sit amet tortor ut ipsum volutpat posuere sit amet at neque. ',
+        description: 'In 1828, Louis Daguerre took the first photo that captured a human being. His intention was to take a photo of the Boulevard du Temple in Paris. The man in his photo was standing in the street, getting his shoes polished. Since the exposure lasted for seven minutes, the man also got captured.',
         social: {
-            github: 'https://github.com/gadzorgenu'
+            github: 'https://github.com/gadzorgenu',
+            linkedIn: 'https://github.com/gadzorgenu'
         },
         like: 5,
         dislike: 1,
         author: 'Georgina Adzorgenu',
-        image:'https://images.unsplash.com/photo-1542038784456-1ea8e935640e?ixid=MXwxMjA3fDB8MHxzZWFyY2h8Mnx8cGhvdG9ncmFwaHl8ZW58MHx8MHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60'
+        image:photograph
     }
 ]
 
@@ -30,6 +31,13 @@ const Posts = () => {
 
     console.log('blog Data',blog)
    
+    const truncate =(str, num) => {
+        if (str.length > num) {
+          return str.slice(0, num) + "...";
+        } else {
+          return str;
+        }
+      }
     
     return(
 
@@ -55,9 +63,9 @@ const Posts = () => {
                 <BlogCard
                 key={item.id}
                 title={item.title}
-                linkedIn={item.linkedIn}
+                linkedIn={item.social.linkedIn}
                 author={item.author}
-                description= {item.description}
+                description= {truncate(item.description, 87)}
                 github={item.social.github}
                 like={item.like}
                 dislike={item.dislike}
