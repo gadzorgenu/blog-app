@@ -14,7 +14,7 @@ const data =[
         description: 'In 1828, Louis Daguerre took the first photo that captured a human being. His intention was to take a photo of the Boulevard du Temple in Paris. The man in his photo was standing in the street, getting his shoes polished. Since the exposure lasted for seven minutes, the man also got captured.',
         social: {
             github: 'https://github.com/gadzorgenu2000',
-            linkedIn: 'https://github.com/gadzorgenu2000'
+            linkedIn: 'https://www.linkedin.com/in/georgina-adzorgenu/'
         },
         like: 5,
         dislike: 1,
