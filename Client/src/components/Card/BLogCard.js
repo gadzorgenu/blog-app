@@ -1,19 +1,27 @@
-import React from 'react'
-import {Box, Text, Image,List, Flex, IconButton, Spacer} from '@chakra-ui/react'
+import React,{useState} from 'react'
+import {Box, Text, Image, Flex, IconButton, Spacer} from '@chakra-ui/react'
 import { GoMarkGithub, GoThumbsdown, GoThumbsup } from "react-icons/go"
 import {TiSocialLinkedinCircular} from 'react-icons/ti'
-import { Link } from 'react-router-dom'
 
 const BlogCard = ({title, description,like, dislike, github,linkedIn, author,image}) => {
+    // const[count,setCounts] = useState(0)
+    // const[dislike,setDislike] = useState(0)
+    // const up = () => {
+    //     setCounts(count + 1) 
+    // }
+
+    // const down = () => {
+    //     setDislike(dislike - 1)
+    // }
 
     return (
         <Box bg='blue.300' rounded='30px' w={{md: '300px'}} color='white'  my={12} ml={8}>
            <Image src={image} borderTopRadius='30px'/>
                 <Text fontSize='18px' fontWeight='bold' textAlign='center' py={2} >{title}</Text>
                 <Box px={4} textAlign='justify' pb={6} >
-                    <Text fontSize='14px' >{description}</Text>
+                    <Text fontSize='14px' >{description} <Text as='a' pl='100px'> view more</Text></Text>
                     <Flex>
-                        <Text fontSize='13px' pt={2} fontWeight='bold' >By: {author}</Text>
+                        <Text fontSize='15px' pt={2} fontWeight='bold' >By: {author}</Text>
                         <Spacer/>
                         <IconButton
                             as='a'
@@ -38,7 +46,7 @@ const BlogCard = ({title, description,like, dislike, github,linkedIn, author,ima
                     <Flex pr={4}>
                         <IconButton
                             colorScheme="none"
-                            aria-label="Github"
+                            aria-label="Like"
                             icon={<GoThumbsup />}
                             p={0}
                             size='xl'
@@ -48,7 +56,7 @@ const BlogCard = ({title, description,like, dislike, github,linkedIn, author,ima
                     <Flex>
                         <IconButton
                             colorScheme="none"
-                            aria-label="Github"
+                            aria-label="Dislike"
                             icon={<GoThumbsdown />}
                             p={0}
                             size='xl'
