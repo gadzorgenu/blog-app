@@ -10,7 +10,7 @@
         type: String,
         required: [true, 'Author is required']
      },
-     body: {
+     description: {
          type: String,
          required: [true, 'Body is required']
      },
@@ -23,9 +23,6 @@
               required: [true, 'Github is required']
            },
            linkedIn:{
-              type: String
-           },
-           website:{
               type: String
            }
         }
@@ -44,7 +41,25 @@
      date:{
         type: Date,
         default: Date.now
-     }
+     },
+     authorRole: {
+      type: String,
+      required: [true, 'AuthorRole is required']
+      },
+      category: {
+         type: String,
+         required: [true, 'Category is required']
+      },
+      readTime: {
+         type: String,
+         required: [true, 'Read time is required']
+      },
+      blogImage: {
+         type: String
+      },
+      image: {
+         type: String
+      } 
     },
      {
         timestamps: true,
