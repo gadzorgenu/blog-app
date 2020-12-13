@@ -1,4 +1,4 @@
-import React, {useContext,useEffect, useState} from 'react'
+import React, {useContext} from 'react'
 import {Box, Button, Heading,Text, Grid, Flex, Input} from '@chakra-ui/react'
 import AddPost from '../components/Modals/AddPostModal'
 import NavBar from '../components/NavBar'
@@ -6,6 +6,7 @@ import {BlogContext} from '../context/blogContext'
 import BlogCard from '../components/Card/BLogCard'
 import config from '../config'
 import photograph from '../assets/photograph.jpg'
+import profile from '../assets/profile.jpeg'
 
 const data =[
     {
@@ -19,7 +20,12 @@ const data =[
         like: 5,
         dislike: 1,
         author: 'Georgina Adzorgenu',
-        image:photograph
+        image:photograph,
+        date: '13 December, 2020',
+        category: 'PHOTOGRAPHY',
+        readTime: '3 MINS READ',
+        avatar: profile,
+        role: 'Creative Director at Forbes'
     }
 ]
 
@@ -62,14 +68,20 @@ const Posts = () => {
             data.map((item) => (
                 <BlogCard
                 key={item.id}
+                date={item.date}
                 title={item.title}
                 linkedIn={item.social.linkedIn}
                 author={item.author}
-                description= {truncate(item.description, 87)}
+                // description= {truncate(item.description, 87)}
+                description={item.description}
                 github={item.social.github}
                 like={item.like}
                 dislike={item.dislike}
                 image={item.image}
+                category={item.category}
+                readTime={item.readTime}
+                avatar={item.avatar}
+                role={item.role}
                 />
             ))
             }

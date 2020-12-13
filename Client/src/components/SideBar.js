@@ -14,7 +14,7 @@ import {
 } from '@chakra-ui/react'
 const SideBar = () => {
     const {isOpen,onOpen, onClose } = useDisclosure()
-    const [placement, setPlacement] = useState('left')
+    const [placement] = useState('left')
 
     return (
        <>

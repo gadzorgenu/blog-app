@@ -1,4 +1,4 @@
-import React, { useRef} from 'react'
+import React from 'react'
 import {
     Modal,
     ModalOverlay,
@@ -23,7 +23,6 @@ import {useDisclosure} from '@chakra-ui/react'
 const AddPost =()=> {
     
     const { isOpen, onOpen, onClose } = useDisclosure()
-    // const initialRef = useRef()
 
     return(
         <>
