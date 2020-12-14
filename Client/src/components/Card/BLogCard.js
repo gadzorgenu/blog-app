@@ -40,7 +40,7 @@ const BlogCard = ({title, description,like,date, dislike,role, github,linkedIn, 
                             />
                             <IconButton
                                 as='a'
-                                aria-label="LinkedIn"
+                                aria-label="LinkedInn"
                                 href={linkedIn}
                                 fontSize='25px'
                                 bg='none'
