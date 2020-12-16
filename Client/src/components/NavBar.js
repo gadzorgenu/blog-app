@@ -1,11 +1,11 @@
 import React from 'react'
-import {Box, Link, Flex,List, Text, Button,Spacer} from '@chakra-ui/react'
+import {Box, Link, Flex,List, Text,Spacer} from '@chakra-ui/react'
 import SideBar from './SideBar'
 import MenuOptions from './Menu'
-import { useAuth0 } from "@auth0/auth0-react";
+import AuthenticationButton from "./authenticate";
 
 const NavBar = ()  => {
-    const {logout} = useAuth0()
+
     return (
         <Box bg='red.300'color='white' py={3}>
             <List>
@@ -17,7 +17,7 @@ const NavBar = ()  => {
                         <Box pt={1}>
                             <Link href='/signup' >Sign Up</Link>
                             <Link href='/login' ml={5}>Login</Link>
-                            
+                            <AuthenticationButton/>
                         </Box>
                         
                         <MenuOptions/>
