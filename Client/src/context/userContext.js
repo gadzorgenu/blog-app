@@ -19,7 +19,7 @@ const UserContextProvider = ({children}) => {
     } catch (error) {
         return error
     }
-}
+  }
 
 
     return (

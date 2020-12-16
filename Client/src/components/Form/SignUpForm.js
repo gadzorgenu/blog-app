@@ -1,12 +1,13 @@
-
 import React, {useState} from 'react'
 import {Formik,Form} from 'formik'
-  import { Box, Heading,Input,InputGroup,Text, Grid,InputRightElement,Link, Button} from '@chakra-ui/react'
-  import {SignUpSchema} from '../../helpers/validation'
+import { Box, Heading,Input,InputGroup,Text, Grid,InputRightElement,Link, Button} from '@chakra-ui/react'
+import {SignUpSchema} from '../../helpers/validation'
+import { useAuth0 } from "@auth0/auth0-react";
 
   const  SignUpForm = ()=> {
 
     const [show, setShow ] = useState(false)
+    const {loginWithRedirect} = useAuth0()
 
     const handleClick=()=> {
         setShow(!show)
@@ -130,7 +131,20 @@ import {Formik,Form} from 'formik'
                             </InputGroup>
                             </Grid>
                             
-                                <Button type='submit' colorScheme='pink' size='md' w={{base:'100%', md:'80%'}} > <Link to='/post'>Sign up </Link>
+                                <Button 
+                                    type='submit' 
+                                    colorScheme='pink' 
+                                    size='md' 
+                                    w={{base:'100%', md:'80%'}} 
+                                    onClick={()=>{
+                                        loginWithRedirect(
+                                            {
+                                                screen_hint: "signup",
+                                            }
+                                        )
+                                    }}
+                                    > 
+                                    {/* <Link to='/post'>Sign up </Link> */}
                                 </Button>
                                 <Text mt={2}>Already have an account? <Link href='/login' color='blue.500'>Login</Link></Text>
                         </Box>
