@@ -5,7 +5,6 @@ import AuthNav from "./AuthNav";
 
 const NavBar = ()  => {
 
-    
     return (
         <Box>
             <MainNavBar/>

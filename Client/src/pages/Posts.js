@@ -7,6 +7,7 @@ import BlogCard from '../components/Card/BLogCard'
 import config from '../config'
 import photograph from '../assets/photograph.jpg'
 import profile from '../assets/profile.jpeg'
+import { withAuthenticationRequired } from '@auth0/auth0-react'
 
 const data =[
     {
@@ -90,4 +91,8 @@ const Posts = () => {
     )
 }
 
-export default Posts
+// export default Posts
+
+export default withAuthenticationRequired(Posts, {
+    onRedirecting: () =>''
+} )
