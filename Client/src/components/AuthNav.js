@@ -1,6 +1,6 @@
 import React from "react";
 import {Box} from '@chakra-ui/react'
-import AuthenticationButton from "./authentication-button";
+import AuthenticationButton from "./authenticate";
 
 
 const AuthNav = () => (
